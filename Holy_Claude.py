@@ -1,134 +1,110 @@
-print("Holy claude , What the hell ! ") 
-# Variable and Data type  
-age = 20
-name = "Kamal"
-sentence = f"{name} is {age}"
-print(sentence , type(sentence)) 
+# ==============================================================================
+# DevSpeedRun - Master Python Learning Journey (Holy_Claude)
+# Complete Phase 1: Python Fundamentals, Data Structures, OOP & Advanced
+# ==============================================================================
 
-# Input ,Output and Conversion
-UserName = input("Whats your name : ")
-salary = int(input("Write Down your Salary(monthly) : "))
-increament = float(input("Write Down your yearly increament : "))
-print(f"{UserName} , Your Salary Will be {salary + (salary * (increament/100.0))} next year")
+print("Holy claude , What the hell ! Welcome to DevSpeedRun Master Track!")
 
-#Conditional And Operators
-goal = 2 ; time_Left = 20 ; Home = True 
-if goal >= 3 or time_Left < 20:
-    print("There is no way Man")
-elif goal <= 2 and Home is True:
-    print("Possible")
-else :
-    print("Great Match")
+# 1. Variable and Data Types
+age = 22
+name = "Riad"
+sentence = f"{name} is {age} years old and speedrunning Python!"
+print(sentence, f"Type: {type(sentence).__name__}")
 
-# Loops in Python 
-# While Loop 
-while goal != 10 :
-    print(goal)
-    goal+=1
-    if goal == 7 :
-        print(f"{goal} : Suiiiii")
-        break 
-# For Loops 
-numbers  = [10,20,30,40,50]
-for index , num in  enumerate(numbers , start=1) :
-    print(index ,":", num)
+# 2. Safe Input, Output, and Conversion
+salary = 75000
+increment = 15.0
+projected_salary = salary + (salary * (increment / 100.0))
+print(f"{name}, your projected salary next year will be: ${projected_salary:,.2f}")
 
-for index,val in enumerate(range(1,10,2)) :
-    print(index , " : " , val)
+# 3. Conditional and Logic Gates
+goal = 3
+time_left = 15
+is_home_game = True
 
+if goal >= 3 and time_left <= 20:
+    print("Match Status: Victory locked in!")
+elif goal < 3 and is_home_game:
+    print("Match Status: Home support pushing for a comeback!")
+else:
+    print("Match Status: Great competitive game.")
 
-# Defining Functions 
-def sum(val1 , val2) :
-    result = val1 + val2 
-    return result 
-    
-print(f"Total Sum :  {sum(10,20)}")
+# 4. Loops (While and For with Enumerate & Range)
+while goal < 7:
+    goal += 1
+    if goal == 7:
+        print(f"Goal {goal}: Suiiiiiii!")
+        break
 
-# Lists, Slicing and Methods in Python
+languages = ["Python", "JavaScript", "TypeScript", "Go", "Docker"]
+for index, lang in enumerate(languages, start=1):
+    print(f"Tech Skill {index:02d}: {lang}")
+
+# 5. Functions & Type Annotations
+def calculate_metrics(base: float, multiplier: float = 1.5) -> float:
+    """Calculates scaled metric score."""
+    return base * multiplier
+
+print(f"Metric Score: {calculate_metrics(40.0)}")
+
+# 6. Lists, Slicing and Methods
 players = ["Messi", "Ronaldo", "Neymar", "Mbappe", "Haaland"]
-print("Original players :", players)
-
-# Slicing [start:end:step]
-top_three = players[0:3]
-print("Top 3 players :", top_three)
-reversed_players = players[::-1]
-print("Reversed players list :", reversed_players)
-
-# Common Methods: append, pop, sort
+print("Top 3 players:", players[:3])
+print("Reversed squad:", players[::-1])
 players.append("Vinicius")
-removed_player = players.pop(1)  # bye Ronaldo for now
-print(f"Removed: {removed_player}, Current squad: {players}")
+removed = players.pop(1)
 players.sort()
-print("Alphabetical squad :", players)
+print(f"Removed {removed}. Alphabetical roster: {players}")
 
-# Dictionaries and Sets in Python
-# Dictionary (Key-Value pairs)
-player_stats = {
-    "name": "Messi",
-    "club": "Inter Miami",
-    "goals": 820,
-    "has_world_cup": True
+# 7. Dictionaries and Sets
+dev_profile = {
+    "username": "riad_dev",
+    "track": "SpeedRun",
+    "phase": 1,
+    "completed": True
 }
-print(f"{player_stats['name']} plays for {player_stats.get('club')}")
+for key, value in dev_profile.items():
+    print(f"  {key.capitalize()} -> {value}")
 
-# Adding new key & looping through items
-player_stats["assists"] = 375
-for key, value in player_stats.items():
-    print(f"{key.capitalize()} -> {value}")
+unique_frameworks = {"FastAPI", "Django", "FastAPI", "Flask"}
+unique_frameworks.add("FastAPI")
+print("Unique Frameworks Set:", unique_frameworks)
 
-# Sets (Unique elements & fast lookups)
-favorite_clubs = {"Barcelona", "Real Madrid", "Man City", "Barcelona"}  # duplicates auto removed
-favorite_clubs.add("Bayern")
-print("Unique clubs :", favorite_clubs)
-print("Is Barcelona in set? :", "Barcelona" in favorite_clubs)
+# 8. List & Dict Comprehensions
+numbers = list(range(1, 11))
+even_squares = [n**2 for n in numbers if n % 2 == 0]
+print("Even squares:", even_squares)
+square_mapping = {n: n**2 for n in numbers[:5]}
+print("Square mapping dict:", square_mapping)
 
-# List Comprehensions (Pythonic way to build lists)
-numbers_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# 9. *args, **kwargs and Lambda Functions
+def aggregate_points(*scores):
+    return sum(scores)
 
-# Filtering and mapping in a single line
-even_squares = [n**2 for n in numbers_list if n % 2 == 0]
-print("Squares of evens :", even_squares)
+def user_config(username, **settings):
+    print(f"Configuring @{username}:", settings)
 
-# Transforming text items
-skills = ["python", "javascript", "react", "fastapi"]
-upper_skills = [skill.upper() for skill in skills]
-print("Upper skills :", upper_skills)
+print("Aggregated scores (*args):", aggregate_points(10, 20, 30, 40))
+user_config("Riad", role="Admin", speedrun=True, level="Phase1-Master")
 
-# *args, **kwargs and Lambda Functions in Python
-# *args: arbitrary number of positional arguments
-def calculate_score(*scores):
-    total = 0
-    for s in scores:
-        total += s
-    return total
-
-print("Calculated score with *args :", calculate_score(10, 20, 30, 40))
-
-# **kwargs: arbitrary keyword arguments (as a dictionary)
-def build_profile(username, **details):
-    print(f"Profile of {username}:")
-    for key, val in details.items():
-        print(f"  {key} : {val}")
-
-build_profile("Riad", role="Developer", speedrun=True, level="Pro")
-
-# Lambda Function: quick one-line anonymous function
 multiply = lambda x, y: x * y
-print("Multiply using lambda :", multiply(7, 8))
+print("Lambda multiply(7, 8):", multiply(7, 8))
 
-# Error and Exception Handling in Python (try, except, else, finally)
+# 10. Robust Exception Handling (try, except, else, finally)
 def safe_divide(a, b):
     try:
         result = a / b
     except ZeroDivisionError:
-        return "Cannot divide by zero, bro!"
+        return "Cannot divide by zero!"
     except TypeError:
         return "Only numbers allowed!"
     else:
         return f"Result is {result}"
     finally:
-        print("[Log] safe_divide executed successfully or handled gracefully.")
+        print("[Log] safe_divide executed cleanly.")
 
 print(safe_divide(10, 2))
 print(safe_divide(10, 0))
-print(safe_divide(10, "two"))
+
+# 11. Reference to Organized Phase 1 Modules
+print("\n[SUCCESS] Phase 1 Curriculum Complete! Explore subdirectories: 01_basics to 11_mini_projects.")
