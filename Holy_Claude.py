@@ -82,3 +82,14 @@ favorite_clubs.add("Bayern")
 print("Unique clubs :", favorite_clubs)
 print("Is Barcelona in set? :", "Barcelona" in favorite_clubs)
 
+# List Comprehensions (Pythonic way to build lists)
+numbers_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Filtering and mapping in a single line
+even_squares = [n**2 for n in numbers_list if n % 2 == 0]
+print("Squares of evens :", even_squares)
+
+# Transforming text items
+skills = ["python", "javascript", "react", "fastapi"]
+upper_skills = [skill.upper() for skill in skills]
+print("Upper skills :", upper_skills)
