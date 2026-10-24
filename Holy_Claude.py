@@ -93,3 +93,25 @@ print("Squares of evens :", even_squares)
 skills = ["python", "javascript", "react", "fastapi"]
 upper_skills = [skill.upper() for skill in skills]
 print("Upper skills :", upper_skills)
+
+# *args, **kwargs and Lambda Functions in Python
+# *args: arbitrary number of positional arguments
+def calculate_score(*scores):
+    total = 0
+    for s in scores:
+        total += s
+    return total
+
+print("Calculated score with *args :", calculate_score(10, 20, 30, 40))
+
+# **kwargs: arbitrary keyword arguments (as a dictionary)
+def build_profile(username, **details):
+    print(f"Profile of {username}:")
+    for key, val in details.items():
+        print(f"  {key} : {val}")
+
+build_profile("Riad", role="Developer", speedrun=True, level="Pro")
+
+# Lambda Function: quick one-line anonymous function
+multiply = lambda x, y: x * y
+print("Multiply using lambda :", multiply(7, 8))
