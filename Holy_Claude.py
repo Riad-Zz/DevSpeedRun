@@ -44,3 +44,19 @@ def sum(val1 , val2) :
     
 print(f"Total Sum :  {sum(10,20)}")
 
+# Lists, Slicing and Methods in Python
+players = ["Messi", "Ronaldo", "Neymar", "Mbappe", "Haaland"]
+print("Original players :", players)
+
+# Slicing [start:end:step]
+top_three = players[0:3]
+print("Top 3 players :", top_three)
+reversed_players = players[::-1]
+print("Reversed players list :", reversed_players)
+
+# Common Methods: append, pop, sort
+players.append("Vinicius")
+removed_player = players.pop(1)  # bye Ronaldo for now
+print(f"Removed: {removed_player}, Current squad: {players}")
+players.sort()
+print("Alphabetical squad :", players)
