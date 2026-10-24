@@ -60,3 +60,25 @@ removed_player = players.pop(1)  # bye Ronaldo for now
 print(f"Removed: {removed_player}, Current squad: {players}")
 players.sort()
 print("Alphabetical squad :", players)
+
+# Dictionaries and Sets in Python
+# Dictionary (Key-Value pairs)
+player_stats = {
+    "name": "Messi",
+    "club": "Inter Miami",
+    "goals": 820,
+    "has_world_cup": True
+}
+print(f"{player_stats['name']} plays for {player_stats.get('club')}")
+
+# Adding new key & looping through items
+player_stats["assists"] = 375
+for key, value in player_stats.items():
+    print(f"{key.capitalize()} -> {value}")
+
+# Sets (Unique elements & fast lookups)
+favorite_clubs = {"Barcelona", "Real Madrid", "Man City", "Barcelona"}  # duplicates auto removed
+favorite_clubs.add("Bayern")
+print("Unique clubs :", favorite_clubs)
+print("Is Barcelona in set? :", "Barcelona" in favorite_clubs)
+
