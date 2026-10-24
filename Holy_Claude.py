@@ -35,3 +35,12 @@ for index , num in  enumerate(numbers , start=1) :
 
 for index,val in enumerate(range(1,10,2)) :
     print(index , " : " , val)
+
+
+# Defining Functions 
+def sum(val1 , val2) :
+    result = val1 + val2 
+    return result 
+    
+print(f"Total Sum :  {sum(10,20)}")
+
