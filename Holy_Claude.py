@@ -115,3 +115,20 @@ build_profile("Riad", role="Developer", speedrun=True, level="Pro")
 # Lambda Function: quick one-line anonymous function
 multiply = lambda x, y: x * y
 print("Multiply using lambda :", multiply(7, 8))
+
+# Error and Exception Handling in Python (try, except, else, finally)
+def safe_divide(a, b):
+    try:
+        result = a / b
+    except ZeroDivisionError:
+        return "Cannot divide by zero, bro!"
+    except TypeError:
+        return "Only numbers allowed!"
+    else:
+        return f"Result is {result}"
+    finally:
+        print("[Log] safe_divide executed successfully or handled gracefully.")
+
+print(safe_divide(10, 2))
+print(safe_divide(10, 0))
+print(safe_divide(10, "two"))
